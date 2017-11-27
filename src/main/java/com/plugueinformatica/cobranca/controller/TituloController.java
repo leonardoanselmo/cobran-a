@@ -21,8 +21,7 @@ public class TituloController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String salvar(Titulo titulo) {
-		
+	public String salvar(Titulo titulo) {		
 		titulos.save(titulo);
 		return "CadastroTitulo";
 	}
