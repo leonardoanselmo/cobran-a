@@ -1,10 +1,16 @@
 package com.plugueinformatica.cobranca.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.plugueinformatica.cobranca.model.StatusTitulo;
 import com.plugueinformatica.cobranca.model.Titulo;
 import com.plugueinformatica.cobranca.repository.Titulos;
 
@@ -16,14 +22,22 @@ public class TituloController {
 	private Titulos titulos;
 	
 	@RequestMapping("/novo")
-	public String novo() {
-		return "CadastroTitulo";
+	public ModelAndView novo() {
+		ModelAndView mv = new ModelAndView("CadastroTitulo");		
+		return mv;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String salvar(Titulo titulo) {		
+	public ModelAndView salvar(Titulo titulo) {		
 		titulos.save(titulo);
-		return "CadastroTitulo";
+		ModelAndView mv = new ModelAndView("CadastroTitulo");
+		mv.addObject("mensagem", "Título salvo com sucesso!");
+		return mv;
+	}
+	
+	@ModelAttribute("todosStatusTitulo")
+	public List<StatusTitulo> todosStatusTitulo(){
+		return Arrays.asList(StatusTitulo.values());
 	}
 	
 
