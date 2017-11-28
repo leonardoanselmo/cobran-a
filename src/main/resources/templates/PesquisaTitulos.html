@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="LayoutPadrao">
 <head>
-<meta charset="UTF-8" />
-<title>Pesquisa de Título</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<title>Pesquisa de Título</title>
 </head>
-<body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <img alt="plugue.code" src="" />
-				</a>
-			</div>
-		</div>
-	</nav>
-	
+<section layout:fragment="conteudo">
 	<div class="panel panel-default">
-	
+				
 		<div class="panel-heading">
-			<h1 class="panel-title">Pesquisa de títulos</h1>
+			<div class="clearfix">
+				<h1 class="panel-title pg-titulo-panel">Pesquisa de títulos</h1>
+				<a class="btn btn-link pg-link-panel" href="/titulos/novo">Novo título</a>
+			</div>
 		</div>	
 		
 		<div class="panel-body">
@@ -42,14 +35,7 @@
 				</tbody>			
 			</table>		
 		</div>
-		
-	</div>
-	
-	
-	
-	
-	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-</body>
-
+				
+	</div>	
+</section>
 </html>
