@@ -11,3 +11,13 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+.pg-link-panel {
+	float: right;
+	padding: 0px;	
+}
+
+.pg-titulo-panel {
+	float: left;
+	padding: 2px;
+}
