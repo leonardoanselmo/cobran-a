@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    	  layout:decorator="LayoutPadrao">
 <head>
-<meta charset="UTF-8" />
-<title>Cadastro de Título</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<title>Cadastro de Título</title>
 </head>
-<body>
-
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#"> <img alt="plugue.code" src="" />
-				</a>
-			</div>
-		</div>
-	</nav>
+<section layout:fragment="conteudo">
 
 	<form class="form-horizontal" method="POST" action="/titulos">
 		
@@ -26,7 +16,10 @@
 	
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1 class="panel-title">Novo Título</h1>
+				<div class="clearfix">
+					<h1 class="panel-title pg-titulo-panel">Novo título</h1>
+					<a class="btn btn-link pg-link-panel" href="/titulos">voltar para pesquisa</a>
+				</div>
 			</div>	
 
 			<div class="panel-body">
@@ -71,9 +64,5 @@
 			</div>
 		</div>
 	</form>
-
-
-	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-</body>
+</section>
 </html>
