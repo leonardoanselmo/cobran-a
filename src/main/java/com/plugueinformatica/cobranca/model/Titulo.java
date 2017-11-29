@@ -37,8 +37,8 @@ public class Titulo {
 	private Date dataVencimento;
 		
 	@NotNull(message = "Valor é obrigatório.")
-	@DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01")
-	@DecimalMax(value = "9999999999.99", message = "Valor não pode ser maior que 9.999.999.999,99")
+	@DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01.")
+	@DecimalMax(value = "9999999999.99", message = "Valor não pode ser maior que 9.999.999.999,99.")
 	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
